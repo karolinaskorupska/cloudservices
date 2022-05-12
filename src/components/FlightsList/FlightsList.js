@@ -4,7 +4,7 @@ import FlightsListItem from 'components/FlightsListItem/FlightsListItem';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  background-color: rgba(249, 249, 249, 1);
+  background-color: ${({ theme }) => theme.colors.bkgColor});
   display: flex;
   flex-direction: column;
   justify-content: center;

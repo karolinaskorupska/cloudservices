@@ -1,10 +1,11 @@
 import React from 'react';
 import FlightsList from 'components/FlightsList/FlightsList';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from 'assets/styles/globalStyles';
+import { theme } from 'assets/styles/theme';
 
 const Wrapper = styled.div`
-  background-color: rgba(249, 249, 249, 1);
+  background-color: ${({ theme }) => theme.colors.bkgColor});
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,12 +13,12 @@ const Wrapper = styled.div`
 `;
 
 const Root = () => (
-  <>
+  <ThemeProvider theme={theme}>
     <GlobalStyles />
     <Wrapper>
       <FlightsList />
     </Wrapper>
-  </>
+  </ThemeProvider>
 );
 
 export default Root;
