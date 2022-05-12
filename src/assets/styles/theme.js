@@ -6,6 +6,7 @@ export const theme = {
     buttonActive: 'lightblue',
     photoBkg: 'rgb(227, 225, 225)',
     txtLight: 'rgb(183, 183, 183)',
+    txtDark: '#848383',
   },
   fontSize: {
     xsmallFont: '13px',

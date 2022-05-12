@@ -32,6 +32,7 @@ export const FlightMainPhoto = styled.div`
   justify-content: center;
   align-items: center;
   color: ${({ theme }) => theme.colors.txtLight};
+  font-size: ${({ theme }) => theme.fontSize.mediumFont};
 `;
 
 export const FlightInfo = styled.div`
@@ -42,10 +43,16 @@ export const FlightInfo = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  color: ${({ theme }) => theme.colors.txtDark};
+  padding-left: 40px;
 `;
 
 export const FlightNumber = styled.span`
   display: block;
   font-size: ${({ theme }) => theme.fontSize.mediumFont};
   font-weight: 400;
+`;
+
+export const FlightName = styled.span`
+  font-weight: 800;
 `;

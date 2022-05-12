@@ -12,6 +12,7 @@ export const StyledButton = styled.button`
   font-size: ${({ theme }) => theme.fontSize.xsmallFont};
   font-weight: 400;
   text-align: center;
+  margin-top: 10px;
   cursor: pointer;
   &:hover {
     border-color: ${({ theme }) => theme.colors.buttonActive};
