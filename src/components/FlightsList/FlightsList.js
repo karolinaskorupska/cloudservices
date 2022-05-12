@@ -7,8 +7,8 @@ const FlightsList = () => (
   <Wrapper>
     <h2>Flights List</h2>
     <ul>
-      {flights.map((flightData) => (
-        <FlightsListItem flightData={flightData} />
+      {flights.map((flightData, index) => (
+        <FlightsListItem flightData={flightData} index={index} />
       ))}
     </ul>
   </Wrapper>
