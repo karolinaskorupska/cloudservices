@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import ButtonMore from 'components/buttons/ButtonMore';
 
 // const LargeDispayWidth = '1160px';
 // const PortraitTabletWidth = '728px';
@@ -32,7 +33,7 @@ const FlightsListItem = ({ flightData: { flightDate, flightMainPhoto = 'no photo
       <div className="flightNumber">{flightNumber} number</div>
       <div className="flightName">{flightName} name</div>
       <div className="flightDate">{flightDate} date</div>
-      <button className="buttonMore">MORE</button>
+      <ButtonMore />
     </div>
   </Element>
 );
