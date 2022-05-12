@@ -1,16 +1,7 @@
 import React from 'react';
 import { flights } from 'data/flights';
 import FlightsListItem from 'components/FlightsListItem/FlightsListItem';
-import styled from 'styled-components';
-
-const Wrapper = styled.div`
-  background-color: ${({ theme }) => theme.colors.bkgColor});
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 80%;
-`;
+import { Wrapper } from './FlightsList.styles';
 
 const FlightsList = () => (
   <Wrapper>
