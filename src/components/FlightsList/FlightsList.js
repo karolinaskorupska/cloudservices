@@ -8,7 +8,7 @@ const FlightsList = () => (
     <h2>Flights List</h2>
     <ul>
       {flights.map((flightData, index) => (
-        <FlightsListItem flightData={flightData} index={index} />
+        <FlightsListItem flightData={flightData} index={index} key={index} />
       ))}
     </ul>
   </Wrapper>
