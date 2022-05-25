@@ -2,6 +2,8 @@ import React from 'react';
 import { flights } from 'data/flights';
 import FlightsListItem from 'components/FlightsListItem/FlightsListItem';
 import { Wrapper } from './FlightsList.styles';
+import PropTypes from 'prop-types';
+import { FlightShape } from 'types';
 
 const FlightsList = () => (
   <Wrapper>
@@ -13,5 +15,9 @@ const FlightsList = () => (
     </ul>
   </Wrapper>
 );
+
+FlightsList.propTypes = {
+  flightData: PropTypes.arrayOf(PropTypes.shape(FlightShape)),
+};
 
 export default FlightsList;
