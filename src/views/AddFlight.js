@@ -1,25 +1,39 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, useContext } from 'react';
 import FormField from 'components/FormField/FormField';
-import { FlightShape } from 'types';
-import { ViewWrapper } from 'components/VievWrapper/ViewWrapper';
+import { FlightsContext } from 'providers/FlightsProvider';
 
-const AddFlight = ({ handleAddFlight, formValues, handleInputChange }) => {
-  return (
-    <ViewWrapper as="form" onSubmit={handleAddFlight}>
-      <h2>Add Custom Flight</h2>
-      <FormField label="Name" id="name" name="name" value={formValues.name} onChange={handleInputChange} />
-      <FormField label="Number" id="number" name="number" value={formValues.number} onChange={handleInputChange} />
-      <FormField label="Date" id="date" name="date" value={formValues.date} onChange={handleInputChange} />
-      <button type="submit">Add</button>
-    </ViewWrapper>
-  );
+const initialFormState = {
+  flightName: '',
+  flightNumber: '',
+  flightDate: '',
 };
 
-AddFlight.propTypes = {
-  handleAddUser: PropTypes.func,
-  formValues: PropTypes.shape(FlightShape),
-  handleInputChange: PropTypes.func,
+const AddFlight = () => {
+  const [formValues, setFormValues] = useState(initialFormState);
+  const { handleAddFlight } = useContext(FlightsContext);
+
+  const handleInputChange = (e) => {
+    setFormValues({
+      ...formValues,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmitFlight = (e) => {
+    e.preventDefault();
+    handleAddFlight(formValues);
+    setFormValues(initialFormState);
+  };
+
+  return (
+    <form onSubmit={handleSubmitFlight}>
+      <h1>Add new</h1>
+      <FormField label="Name" id="flightName" name="flightName" value={formValues.flightName} onChange={handleInputChange} />
+      <FormField label="Number" id="flightNumber" name="flightNumber" value={formValues.flightNumber} onChange={handleInputChange} />
+      <FormField label="Date" id="flightDate" name="flightDate" value={formValues.flightDate} onChange={handleInputChange} />
+      <button type="submit">Add</button>
+    </form>
+  );
 };
 
 export default AddFlight;
