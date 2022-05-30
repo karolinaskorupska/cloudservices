@@ -6,7 +6,7 @@ const FormField = ({ onChange, value, label, name, id, type = 'text' }) => {
     <>
       <p>FORM field</p>
       <label htmlFor={id}>{label}</label>
-      <input name={name} id={id} type={type} value={value} onChange={onChange} />
+      <input name={name} id={id} type={type} value={value} onChange={onChange} data-testid={label} />
     </>
   );
 };

@@ -28,9 +28,9 @@ const AddFlight = () => {
   return (
     <form onSubmit={handleSubmitFlight}>
       <h1>Add new</h1>
-      <FormField label="Name" id="flightName" name="flightName" value={formValues.flightName} onChange={handleInputChange} />
-      <FormField label="Number" id="flightNumber" name="flightNumber" value={formValues.flightNumber} onChange={handleInputChange} />
-      <FormField label="Date" id="flightDate" name="flightDate" value={formValues.flightDate} onChange={handleInputChange} />
+      <FormField label="flightName" id="flightName" name="flightName" value={formValues.flightName} onChange={handleInputChange} />
+      <FormField label="flightNumber" id="flightNumber" name="flightNumber" value={formValues.flightNumber} onChange={handleInputChange} />
+      <FormField label="flightDate" id="flightDate" name="flightDate" value={formValues.flightDate} onChange={handleInputChange} />
       <button type="submit">Add</button>
     </form>
   );
