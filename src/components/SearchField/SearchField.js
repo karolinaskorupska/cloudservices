@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { SearchFieldStyled } from 'components/SearchField/SearchField.styled';
+import { SearchFieldStyled, Input, Label } from 'components/SearchField/SearchField.styled';
 
 const SearchField = ({ onChange, value, label, name, id, type = 'text' }) => {
   return (
     <SearchFieldStyled>
-      <label htmlFor={id}>{label}</label>
-      <input name={name} id={id} type={type} value={value} onChange={onChange} />
+      <Label htmlFor={id}>{label}</Label>
+      <Input name={name} id={id} type={type} value={value} onChange={onChange} />
     </SearchFieldStyled>
   );
 };
