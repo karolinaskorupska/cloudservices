@@ -24,3 +24,10 @@ export const SearchButton = styled.button`
   text-align: center;
   cursor: pointer;
 `;
+
+export const CustomSelect = styled.select`
+  width: 24px;
+  height: 24px;
+  border-color: #7f7d7d;
+  border-radius: 5px;
+`;
