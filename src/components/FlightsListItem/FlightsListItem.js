@@ -5,22 +5,21 @@ import ButtonMore from 'components/buttons/ButtonMore';
 
 const showIndex = (index) => alert(`This is a flight nr #${index + 1}`);
 
-const FlightsListItem = ({
-  index,
-  flightData,
-  // :
-  //  { flightDate, flightMainPhoto = 'no photo', flightName, flightNumber
-  // }
-}) => {
-  console.log(flightData);
+const FlightsListItem = ({ index, flightData }) => {
+  const flightName = flightData.name;
+  const flightDate = flightData.static_fire_date_utc;
+  const flightNumber = flightData.flight_number;
+  const flightMainPhoto = flightData.links.flickr.original[0];
 
   return (
-    <Element className="flightsListElement" key={flightNumber}>
-      <FlightMainPhoto className="flightMainPhoto">{flightMainPhoto} photo</FlightMainPhoto>
+    <Element className="flightsListElement" key={flightName}>
+      <FlightMainPhoto className="flightMainPhoto">
+        <img src={flightMainPhoto} alt="main photo" />
+      </FlightMainPhoto>
       <FlightInfo className="flightInfo">
-        <FlightNumber className="flightNumber">{flightNumber} number</FlightNumber>
-        <FlightName className="flightName">{flightName} name</FlightName>
-        <div className="flightDate">{flightDate} date</div>
+        <FlightNumber className="flightNumber">{flightNumber}</FlightNumber>
+        <FlightName className="flightName">{flightName}</FlightName>
+        <div className="flightDate">{flightDate}</div>
         <ButtonMore onClick={() => showIndex(index)} />
       </FlightInfo>
     </Element>

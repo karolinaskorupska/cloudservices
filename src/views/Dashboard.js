@@ -11,7 +11,6 @@ const Dashboard = () => {
     axios
       .get('https://api.spacexdata.com/v4/launches')
       .then((data) => {
-        console.log(data.data);
         setFlights(data.data);
       })
       .catch((err) => console.log(err));

@@ -3,10 +3,8 @@ import FlightsListItem from 'components/FlightsListItem/FlightsListItem';
 import { Wrapper } from './FlightsList.styles';
 import PropTypes from 'prop-types';
 import { FlightShape } from 'types';
-import axios from 'axios';
 
 const FlightsList = ({ flights }) => {
-  console.log(flights);
   return (
     <Wrapper>
       <ul>
