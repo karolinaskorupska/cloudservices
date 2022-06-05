@@ -14,15 +14,13 @@ const Dashboard = () => {
         setFlights(data.data);
       })
       .catch((err) => console.log(err));
+  }, []);
 
-    // const { flights } = useContext(FlightsContext);
-  });
-
-  return (
-    <>
-      <FlightsList flights={flights} />
-    </>
-  );
+  if (flights) {
+    return <FlightsList flights={flights} />;
+  } else {
+    return <h1>somenthing went wrong</h1>;
+  }
 };
 
 export default Dashboard;

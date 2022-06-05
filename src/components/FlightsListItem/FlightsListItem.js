@@ -28,7 +28,7 @@ FlightsListItem.propTypes = {
   flightData: PropTypes.shape({
     flightDate: PropTypes.string,
     flightMainPhoto: PropTypes.string,
-    flightName: PropTypes.string.isRequired,
+    flightName: PropTypes.string,
     flightNumber: PropTypes.string,
   }),
 };
