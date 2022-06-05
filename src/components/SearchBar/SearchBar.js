@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import SearchField from 'components/SearchField/SearchField';
 import { FilterContext } from 'providers/FilteredFlightsProvider';
-import { SearchForm } from './SearchBar.styled';
+import { SearchForm, SearchButton } from './SearchBar.styled';
 
 const initialSearchState = {
   flightName: '',
@@ -30,9 +30,23 @@ const SearchBar = () => {
   return (
     <>
       <SearchForm onSubmit={handleSearch}>
-        <SearchField label="nazwa Lotu" id="flightName" name="flightName" value={searchValues.flightName} onChange={handleChange} />
-        <SearchField label="data Lotu" id="flightDate" name="flightDate" value={searchValues.flightDate} onChange={handleChange} />
-        <button type="submit">Szukaj</button>
+        <SearchField
+          label="nazwa Lotu"
+          id="flightName"
+          name="flightName"
+          value={searchValues.flightName}
+          onChange={handleChange}
+          placeholder="Wpisz Nazwę"
+        />
+        <SearchField
+          label="data Lotu"
+          id="flightDate"
+          name="flightDate"
+          value={searchValues.flightDate}
+          onChange={handleChange}
+          placeholder="RRRR/MM/DD - RRRR/MM/DD"
+        />
+        <SearchButton type="submit">Szukaj</SearchButton>
       </SearchForm>
       {/* <button>Pokaz tylko udane loty</button> */}
     </>
