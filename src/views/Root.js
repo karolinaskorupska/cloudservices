@@ -8,6 +8,7 @@ import AddFlight from 'views/AddFlight';
 import Dashboard from 'views/Dashboard';
 import FlightsProvider from 'providers/FlightsProvider';
 import MainTemplate from 'components/templates/MainTemplate';
+import SearchBar from 'components/SearchBar/SearchBar';
 
 const Root = () => {
   return (
@@ -16,6 +17,7 @@ const Root = () => {
         <GlobalStyles />
         <MainTemplate>
           <FlightsProvider>
+            <SearchBar />
             <Wrapper>
               <Routes>
                 <Route path="/add-flight" element={<AddFlight />} />
